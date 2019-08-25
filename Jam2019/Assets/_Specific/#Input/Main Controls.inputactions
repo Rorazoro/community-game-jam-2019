@@ -1,0 +1,52 @@
+{
+    "name": "Main Controls",
+    "maps": [
+        {
+            "name": "Player Action Map",
+            "id": "6a9d40ca-9526-4bdd-b40d-038028567b04",
+            "actions": [
+                {
+                    "name": "Main Action",
+                    "type": "Button",
+                    "id": "753a1262-665e-4e2a-b62f-d119d837b3b1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Secondary Action",
+                    "type": "Button",
+                    "id": "feb785e2-7938-489a-8805-d3b4e29a746f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "be3f6ef9-b580-4a0c-88ee-8d4fa91c2148",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Main Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0b65d05-557f-45f7-afc6-b084e78ca6c4",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary Action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
