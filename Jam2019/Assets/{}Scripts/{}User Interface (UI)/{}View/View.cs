@@ -22,6 +22,8 @@ public class View : MonoBehaviour
 	protected RectTransform rectTransform;
 	public RectTransform _RectTransform { get { return this.rectTransform; } }
 
+	[SerializeField] protected RectTransform content;
+
 	public bool Active_ { get; private set; }
 
 	public virtual void Open()
@@ -117,19 +119,21 @@ public class View : MonoBehaviour
 		string typeName = this.GetType().Name;
 		this.gameObject.name = (typeName.Equals("View") ? "[View]" : "[View] ") + typeName.Remove(typeName.Length - 4);
 
-		if (this.transform.Find("[Content]") == null)
+		this.content = this.transform.Find("[Content]") as RectTransform;
+
+		if (this.content == null)
 		{
 			GameObject content = new GameObject("[Content]", typeof(RectTransform));
 
 			content.transform.SetParent(this.transform);
 
-			RectTransform contentRectTransform = content.transform as RectTransform;
+			this.content = content.transform as RectTransform;
 
-			contentRectTransform.anchorMin = new Vector2(0f, 0f);
-			contentRectTransform.anchorMax = new Vector2(1f, 1f);
-
-			contentRectTransform.offsetMin = Vector2.zero;
-			contentRectTransform.offsetMax = Vector2.zero;
+			this.content.anchorMin = new Vector2(0f, 0f);
+			this.content.anchorMax = new Vector2(1f, 1f);
+			
+			this.content.offsetMin = Vector2.zero;
+			this.content.offsetMax = Vector2.zero;
 		}
 
 		if (this.rectTransform == null)

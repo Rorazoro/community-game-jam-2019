@@ -15,14 +15,27 @@ using TMPro;
 
 public class WorldSpaceDialogueView : DialogueView
 {
-	[SerializeField] private Transform _worldSpaceTarget;
+	private Transform _target;
 
-	public override void DisplayDialogue(Dialogue dialogue)
+	public void SetTarget(Transform target)
 	{
-		this.rectTransform.anchoredPosition = Camera.main.WorldToScreenPoint(this._worldSpaceTarget.position);
+		this._target = target;
+	}
+
+	public void DisplayDialogue(Dialogue dialogue, Transform target)
+	{
+		if (this._target == null)
+		{
+			Debug.LogError("Target is not set.");
+			return;
+		}
+
+		this.rectTransform.anchoredPosition = Camera.main.WorldToScreenPoint(this._target.position);
 
 		base.DisplayDialogue(dialogue);
 	}
+
+	public override void DisplayDialogue(Dialogue dialogue) => this.DisplayDialogue(dialogue, this._target);
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()

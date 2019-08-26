@@ -11,7 +11,7 @@ using UnityEngine.Events;
 using UnityEditor;
 #endif
 
-public class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviour, IInteractable
 {
 	[SerializeField] private Transform _interactionPoint;
 	public Transform _InteractionPoint { get { return this._interactionPoint; } }
@@ -43,6 +43,8 @@ public class Interactable : MonoBehaviour
 
 		this._onInteractionFail.Invoke();
 	}
+
+	public void Interact(Object @object) => this.Interact();
 
 #if UNITY_EDITOR
 	//protected virtual void OnDrawGizmos()

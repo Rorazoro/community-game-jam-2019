@@ -14,10 +14,10 @@ using UnityEditor;
 using TMPro;
 
 [CreateAssetMenu(fileName = "Task Int Data", menuName = "Task/Data/Task Int Data", order = 1)]
-public class TaskIntData : TaskData
+public class TaskIntData : DefaultTaskData
 {
-	[SerializeField] private int _defaultCountValue;
-	public int _DefaultValue { get { return this._defaultCountValue; } }
+	[SerializeField] private int _countValue;
+	public int _Value { get { return this._countValue; } }
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()

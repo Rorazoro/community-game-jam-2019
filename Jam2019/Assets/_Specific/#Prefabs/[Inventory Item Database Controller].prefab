@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7910614814380034428}
   - component: {fileID: 7910614814380034431}
   m_Layer: 0
-  m_Name: Inventory Item Database Controller
+  m_Name: '[Inventory Item Database Controller]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventoryItemSharedData: []
+  _itemsSearchFoldersPaths:
+  - Assets/_Specific/#Inventory/{#}Items
