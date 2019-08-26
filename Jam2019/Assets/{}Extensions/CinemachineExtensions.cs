@@ -7,8 +7,9 @@ using UnityEngine;
 public class CinemachineExtensions : MonoBehaviour
 {
     private CinemachineVirtualCamera vcam;
+    private float desiredFOV;
 
-    public float ZoomSpeed = 2f;
+    public float ZoomSpeed = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,21 @@ public class CinemachineExtensions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
-            vcam.m_Lens.FieldOfView -= ZoomSpeed;
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
-        {
-            vcam.m_Lens.FieldOfView += ZoomSpeed;
+            float currentFOV = vcam.m_Lens.FieldOfView;
+            float mouseAxis = Input.GetAxis("Mouse ScrollWheel");
+            desiredFOV = mouseAxis * 2;
+
+            Debug.Log("desiredFOV: " + desiredFOV);
+            if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+            {
+                vcam.m_Lens.FieldOfView = Mathf.Lerp(currentFOV, mouseAxis * 2, Time.deltaTime * ZoomSpeed);
+            }
+            else
+            {
+                vcam.m_Lens.FieldOfView = Mathf.Lerp(mouseAxis * 2, currentFOV, Time.deltaTime * ZoomSpeed);
+            }
         }
     }
 }
