@@ -27,29 +27,15 @@ public abstract class Item<TInventoryItemSharedData> : MonoBehaviour, IItem, IIn
 			Object.Destroy(this.gameObject);
 	}
 
-	public void AddToInventory(IInventoryHolder inventoryHolder) { this.AddToInventory(inventoryHolder._Inventory); }
-	public void AddToInventory(Collider collider) { this.AddToInventory(collider.GetComponent<IInventoryHolder>()); }
-	public void AddToInventory(Collider2D collider2D) { this.AddToInventory(collider2D.GetComponent<IInventoryHolder>()); }
+	public void AddToInventory(IInventoryHolder inventoryHolder) => this.AddToInventory(inventoryHolder._Inventory);
+	public void AddToInventory(Collider collider) => this.AddToInventory(collider.GetComponent<IInventoryHolder>());
+	public void AddToInventory(Collider2D collider2D) => this.AddToInventory(collider2D.GetComponent<IInventoryHolder>());
 
-	public virtual void Interact()
-	{
-		throw new System.NotImplementedException();
-	}
+	public virtual void Interact() => throw new System.NotImplementedException();
 
-	public virtual void Interact(Object @object)
-	{
-		this.AddToInventory(@object as IInventoryHolder);
-	}
-
-	public virtual void Interact(Collider component)
-	{
-		this.AddToInventory(component);
-	}
-
-	public virtual void Interact(Collider2D component)
-	{
-		this.AddToInventory(component);
-	}
+	public virtual void Interact(Object @object) => this.AddToInventory(@object as IInventoryHolder);
+	public virtual void Interact(Collider component) => this.AddToInventory(component);
+	public virtual void Interact(Collider2D component) => this.AddToInventory(component);
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()

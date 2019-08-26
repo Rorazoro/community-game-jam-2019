@@ -44,7 +44,7 @@ public class TaskInt : Task<TaskIntData, TaskIntCompletionData>
 	{
 		base.ResetState();
 
-		this._value = this.taskData._DefaultValue;
+		this._value = this.taskData._Value;
 	}
 
 #if UNITY_EDITOR

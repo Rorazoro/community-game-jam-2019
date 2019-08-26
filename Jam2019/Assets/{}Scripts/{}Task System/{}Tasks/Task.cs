@@ -1,5 +1,6 @@
 ﻿/* Created by Luna.Ticode */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -9,12 +10,11 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[System.Serializable]
-public abstract class Task<TTaskData, TTaskCompletionData> : Task
-	where TTaskData : TaskData
+public abstract class Task<TDefaultTaskData, TTaskCompletionData> : Task
+	where TDefaultTaskData : DefaultTaskData
 	where TTaskCompletionData : TaskCompletionData
 {
-	[SerializeField] protected TTaskData taskData;
+	[SerializeField] protected TDefaultTaskData taskData;
 
 	protected abstract bool TryToComplete(TTaskCompletionData taskCompletionData);
 
@@ -41,7 +41,6 @@ public interface ITask
 	bool TryToCompleteDependingOnSubTasks();
 }
 
-[System.Serializable]
 [CreateAssetMenu(fileName = "s Task", menuName = "Task/Task", order = 1)]
 public class Task : ScriptableObject, ITask
 {
@@ -60,6 +59,8 @@ public class Task : ScriptableObject, ITask
 	[SerializeField] protected bool completed;
 	public bool _Completed { get { return this.completed; } }
 
+	public event Action OnComplete = delegate { };
+	
 	public void Complete(bool includeSubTasks = false)
 	{
 		if (includeSubTasks)
@@ -71,6 +72,8 @@ public class Task : ScriptableObject, ITask
 		}
 
 		this.completed = true;
+
+		this.OnComplete.Invoke();
 
 		this.ParentTask?.TryToCompleteDependingOnSubTasks();
 	}
@@ -120,11 +123,6 @@ public class Task : ScriptableObject, ITask
 			
 			this.subTasks[i].ParentTask = this;
 		}
-	}
-
-	protected virtual void Awake()
-	{
-		this.Initialize();
 	}
 }
 

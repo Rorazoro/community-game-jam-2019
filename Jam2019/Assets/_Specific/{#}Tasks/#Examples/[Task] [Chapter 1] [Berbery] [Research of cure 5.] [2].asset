@@ -7,13 +7,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33bad7d8a5bb9448b4f33f701179906, type: 3}
-  m_Name: Task Int
+  m_Script: {fileID: 11500000, guid: cf0f5172e26d80e4d8a6cccb2b500c78, type: 3}
+  m_Name: '[Task] [Chapter 1] [Berbery] [Research of cure 5.] [2]'
   m_EditorClassIdentifier: 
   subTasks: []
   active: 1
   completed: 0
-  taskData: {fileID: 11400000, guid: 6eb252b66259dbb46bb59643828cb14c, type: 2}
-  _completionValue: 2

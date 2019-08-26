@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using System.IO;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -16,7 +17,7 @@ public class InventoryItemDatabaseController : MonoBehaviourSingleton<InventoryI
 
 	private Dictionary<int, InventoryItemSharedData> _itemId_inventoryItemSharedDataRelation;
 
-	[SerializeField] private InventoryItemSharedData[] _inventoryItemSharedData;
+	[SerializeField] private List<InventoryItemSharedData> _inventoryItemSharedData;
 
 	public InventoryItemSharedData FetchSharedData(int itemId)
 	{
@@ -27,9 +28,9 @@ public class InventoryItemDatabaseController : MonoBehaviourSingleton<InventoryI
 	{
 		InventoryItemDatabaseController.s_freeItemId = DEFAULT_FREE_ITEM_ID;
 
-		this._itemId_inventoryItemSharedDataRelation = new Dictionary<int, InventoryItemSharedData>(this._inventoryItemSharedData.Length);
+		this._itemId_inventoryItemSharedDataRelation = new Dictionary<int, InventoryItemSharedData>(this._inventoryItemSharedData.Count);
 
-		for (int i = 0; i < this._inventoryItemSharedData.Length; i++)
+		for (int i = 0; i < this._inventoryItemSharedData.Count; i++)
 		{
 			// Index ItemSharedData
 			this._inventoryItemSharedData[i].Id = ++InventoryItemDatabaseController.s_freeItemId;
@@ -46,6 +47,24 @@ public class InventoryItemDatabaseController : MonoBehaviourSingleton<InventoryI
 	}
 
 #if UNITY_EDITOR
+	[Header("Editor Only")]
+
+	[SerializeField] private string[] _itemsSearchFoldersPaths = new string[]
+	{
+		"Assets/_Specific/#Inventory/{#}Items"
+	};
+
+	public void LoadItemsDataFromFoldersEO()
+	{
+		string[] assetsGUIDs = AssetDatabase.FindAssets("t: InventoryItemSharedData", this._itemsSearchFoldersPaths);
+		
+		for (int a = 0; a < assetsGUIDs.Length; a++)
+		{
+			this._inventoryItemSharedData.Add(
+				AssetDatabase.LoadAssetAtPath<InventoryItemSharedData>(AssetDatabase.GUIDToAssetPath(assetsGUIDs[a]))
+			);
+		}
+	}
 #endif
 }
 
@@ -65,7 +84,18 @@ public class InventoryItemDatabaseControllerEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
+		this.serializedObject.Update();
+
 		this.DrawDefaultInspector();
+
+		if (GUILayout.Button("Load Items Data From Folders"))
+		{
+			this.sInventoryItemDatabaseController.LoadItemsDataFromFoldersEO();
+
+			EditorUtility.SetDirty(this.sInventoryItemDatabaseController);
+		}
+
+		this.serializedObject.ApplyModifiedProperties();
 	}
 }
 #endif

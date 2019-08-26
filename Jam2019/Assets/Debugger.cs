@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,11 +14,12 @@ using UnityEditor;
 
 using TMPro;
 
-[CreateAssetMenu(fileName = "Task Int Data", menuName = "Task/Data/Task Int Data", order = 1)]
-public class TaskIntData : DefaultTaskData
+using UDebug = UnityEngine.Debug;
+
+public class Debugger : MonoBehaviour
 {
-	[SerializeField] private int _countValue;
-	public int _Value { get { return this._countValue; } }
+	public void Debug(string message) => UDebug.Log(message);
+	public void Debug(object message) => UDebug.Log(message);
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()
@@ -27,17 +29,17 @@ public class TaskIntData : DefaultTaskData
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(TaskIntData))]
+[CustomEditor(typeof(Debugger))]
 [CanEditMultipleObjects]
-public class TaskIntDataEditor : Editor
+public class DebuggerEditor : Editor
 {
 #pragma warning disable 0219, 414
-	private TaskIntData _sTaskIntData;
+	private Debugger _sDebugger;
 #pragma warning restore 0219, 414
 
 	private void OnEnable()
 	{
-		this._sTaskIntData = this.target as TaskIntData;
+		this._sDebugger = this.target as Debugger;
 	}
 
 	public override void OnInspectorGUI()

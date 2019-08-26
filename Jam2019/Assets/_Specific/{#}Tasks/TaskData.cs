@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,12 +14,13 @@ using UnityEditor;
 
 using TMPro;
 
-[CreateAssetMenu(fileName = "Task Int Data", menuName = "Task/Data/Task Int Data", order = 1)]
-public class TaskIntData : DefaultTaskData
+[CreateAssetMenu(fileName = "Task Data", menuName = "Task/Data/Task Data", order = 1)]
+public class TaskData : ScriptableObject
 {
-	[SerializeField] private int _countValue;
-	public int _Value { get { return this._countValue; } }
-
+	[TextArea(0, 24)] //TODO: create attribute that counts characters. And displays characters left.
+	[SerializeField] private string _description;
+	public string _Description => this._description;
+	
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()
 	//{
@@ -27,17 +29,17 @@ public class TaskIntData : DefaultTaskData
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(TaskIntData))]
+[CustomEditor(typeof(TaskData))]
 [CanEditMultipleObjects]
-public class TaskIntDataEditor : Editor
+public class TaskDataEditor : Editor
 {
 #pragma warning disable 0219, 414
-	private TaskIntData _sTaskIntData;
+	private TaskData _sTaskData;
 #pragma warning restore 0219, 414
 
 	private void OnEnable()
 	{
-		this._sTaskIntData = this.target as TaskIntData;
+		this._sTaskData = this.target as TaskData;
 	}
 
 	public override void OnInspectorGUI()

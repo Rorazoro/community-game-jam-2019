@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf0f5172e26d80e4d8a6cccb2b500c78, type: 3}
-  m_Name: Task 3
+  m_Name: '[Task] [Chapter 1] [Berbery] [Research of cure 5.] [0]'
   m_EditorClassIdentifier: 
   subTasks: []
   active: 1

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,12 +14,8 @@ using UnityEditor;
 
 using TMPro;
 
-[CreateAssetMenu(fileName = "Task Int Data", menuName = "Task/Data/Task Int Data", order = 1)]
-public class TaskIntData : DefaultTaskData
+public class AdvancedGridLayoutGroup : GridLayoutGroup
 {
-	[SerializeField] private int _countValue;
-	public int _Value { get { return this._countValue; } }
-
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()
 	//{
@@ -27,17 +24,17 @@ public class TaskIntData : DefaultTaskData
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(TaskIntData))]
+[CustomEditor(typeof(AdvancedGridLayoutGroup))]
 [CanEditMultipleObjects]
-public class TaskIntDataEditor : Editor
+public class AdvancedGridLayoutGroupEditor : Editor
 {
 #pragma warning disable 0219, 414
-	private TaskIntData _sTaskIntData;
+	private AdvancedGridLayoutGroup _sAdvancedGridLayoutGroup;
 #pragma warning restore 0219, 414
 
 	private void OnEnable()
 	{
-		this._sTaskIntData = this.target as TaskIntData;
+		this._sAdvancedGridLayoutGroup = this.target as AdvancedGridLayoutGroup;
 	}
 
 	public override void OnInspectorGUI()

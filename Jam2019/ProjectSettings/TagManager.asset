@@ -16,17 +16,17 @@ TagManager:
   - 
   - 
   - 
+  - Walkable
+  - Obstacle
   - 
   - 
   - 
+  - Interactable
+  - Character
   - 
+  - Non Player Character
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Item
   - 
   - 
   - 

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,11 +14,20 @@ using UnityEditor;
 
 using TMPro;
 
-[CreateAssetMenu(fileName = "Task Int Data", menuName = "Task/Data/Task Int Data", order = 1)]
-public class TaskIntData : DefaultTaskData
+public class TasksController : MonoBehaviourSingleton<TasksController>
 {
-	[SerializeField] private int _countValue;
-	public int _Value { get { return this._countValue; } }
+	[SerializeField] private Task[] _tasks;
+
+	protected override void Awake()
+	{
+		base.Awake();
+
+		for (int a = 0; a < this._tasks.Length; a++)
+		{
+			this._tasks[a].ResetState();
+			this._tasks[a].Initialize();
+		}
+	}
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()
@@ -27,17 +37,17 @@ public class TaskIntData : DefaultTaskData
 }
 
 #if UNITY_EDITOR
-[CustomEditor(typeof(TaskIntData))]
+[CustomEditor(typeof(TasksController))]
 [CanEditMultipleObjects]
-public class TaskIntDataEditor : Editor
+public class TasksControllerEditor : Editor
 {
 #pragma warning disable 0219, 414
-	private TaskIntData _sTaskIntData;
+	private TasksController _sTasksController;
 #pragma warning restore 0219, 414
 
 	private void OnEnable()
 	{
-		this._sTaskIntData = this.target as TaskIntData;
+		this._sTasksController = this.target as TasksController;
 	}
 
 	public override void OnInspectorGUI()
