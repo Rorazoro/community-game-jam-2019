@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private NavMeshAgent NavAgent;
     private GameObject CurrentPointer;
-    private Rigidbody rb;
+    private Animator animator;
 
     public LayerMask Clickable;
     public GameObject PointerPrefab;
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         NavAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -24,15 +24,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Move();
+            
         }
 
-        if (CurrentPointer != null)
+        if (NavAgent.velocity != Vector3.zero)
         {
-            if (rb.position.x == CurrentPointer.transform.position.x &&
-                rb.position.z == CurrentPointer.transform.position.z)
-            {
-                Destroy(CurrentPointer);
-            }
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            Destroy(CurrentPointer);
+            animator.SetBool("Moving", false);
         }
     }
 

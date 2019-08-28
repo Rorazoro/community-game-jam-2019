@@ -485,19 +485,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 275191957, guid: a6f4a1a9a4333a64dabeb779a543c809, type: 3}
-      propertyPath: Clickable.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 275191957, guid: a6f4a1a9a4333a64dabeb779a543c809, type: 3}
-      propertyPath: PointerPrefab
-      value: 
-      objectReference: {fileID: 2897198073583149566, guid: 976331b036ac2714c862b8df262201ed,
-        type: 3}
-    - target: {fileID: 275191956, guid: a6f4a1a9a4333a64dabeb779a543c809, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6f4a1a9a4333a64dabeb779a543c809, type: 3}
 --- !u!4 &275191959 stripped
