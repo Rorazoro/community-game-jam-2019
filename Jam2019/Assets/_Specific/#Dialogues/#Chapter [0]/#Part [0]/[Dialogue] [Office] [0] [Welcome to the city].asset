@@ -20,17 +20,29 @@ MonoBehaviour:
   - _sentenceText: Nice to meet you Mayor Johnson. I am here on professional matters,
       so I don't have time to please myself. Why have you called for me?
     _audioCover: {fileID: 0}
-    _collocutor: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: e6ee73d56ce08eb428b4476f65bd9295, type: 2}
   - _sentenceText: Straight to the point, I like it. So here is the situation.
     _audioCover: {fileID: 0}
-    _collocutor: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
   - _sentenceText: A few days ago I was looking through my old files and found some
       of them missing from my desk drawer.
     _audioCover: {fileID: 0}
-    _collocutor: {fileID: 0}
-  - _sentenceText: 'I didn''t give it a notice '
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
+  - _sentenceText: I didn't think it was a big deal, I thought that I have forgotten
+      it somewhere at home.
     _audioCover: {fileID: 0}
-    _collocutor: {fileID: 0}
-  - _sentenceText: I don't have time to please myself.
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
+  - _sentenceText: But here we are.
     _audioCover: {fileID: 0}
-    _collocutor: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
+  - _sentenceText: Was there anything else missing? Can you describe the look of those
+      files?
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: e6ee73d56ce08eb428b4476f65bd9295, type: 2}
+  - _sentenceText: Nope, just the folder full of files. Weeeell, they contain pretty
+      important stamps. That is about everything I can tell.
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
+  - _sentenceText: Ok, I will let you know when I have something.
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: e6ee73d56ce08eb428b4476f65bd9295, type: 2}

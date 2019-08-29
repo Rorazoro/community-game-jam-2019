@@ -1062,7 +1062,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Test text
+  m_text: Nice to meet you Mayor Johnson. I am here on professional matters, so I
+    don't have time to please myself. Why have you called for me?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1090,7 +1091,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 29
+  m_fontSize: 24
   m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -3150,18 +3151,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5263831573964076943, guid: 0a910d076fe4c614fb6242650d5e2eed,
         type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5263831573964076943, guid: 0a910d076fe4c614fb6242650d5e2eed,
-        type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5263831573964076943, guid: 0a910d076fe4c614fb6242650d5e2eed,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5263831573964076943, guid: 0a910d076fe4c614fb6242650d5e2eed,
         type: 3}

@@ -15,6 +15,7 @@ using TMPro;
 
 namespace UnityEditor.Events
 {
+#if UNITY_EDITOR
 	public static class UnityEventToolsExpansion
 	{
 		public static void AddPersistentListener(UnityEventBase unityEventBase, UnityAction unityAction)
@@ -27,4 +28,5 @@ namespace UnityEditor.Events
 			);
 		}
 	}
+#endif
 }
