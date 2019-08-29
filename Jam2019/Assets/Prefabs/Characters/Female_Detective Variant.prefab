@@ -37,8 +37,7 @@ MonoBehaviour:
   Clickable:
     serializedVersion: 2
     m_Bits: 256
-  PointerPrefab: {fileID: 2897198073583149566, guid: 976331b036ac2714c862b8df262201ed,
-    type: 3}
+  PointerPrefab: {fileID: 0}
 --- !u!1001 &5648148671524068657
 PrefabInstance:
   m_ObjectHideFlags: 0

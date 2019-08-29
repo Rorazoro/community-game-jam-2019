@@ -4,11 +4,9 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     private NavMeshAgent NavAgent;
-    private GameObject CurrentPointer;
     private Animator animator;
 
     public LayerMask Clickable;
-    public GameObject PointerPrefab;
 
 
     // Start is called before the first frame update
@@ -33,7 +31,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(CurrentPointer);
             animator.SetBool("Moving", false);
         }
     }
@@ -45,13 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, 100, Clickable))
         {
-            if (CurrentPointer != null)
-            {
-                Destroy(CurrentPointer);
-            }
             Vector3 clickPoint = new Vector3(hitInfo.point.x, 0, hitInfo.point.z);
-
-            CurrentPointer = Instantiate(PointerPrefab, clickPoint, Quaternion.identity);
             NavAgent.SetDestination(hitInfo.point);
         }
     }
