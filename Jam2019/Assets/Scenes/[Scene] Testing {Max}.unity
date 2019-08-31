@@ -2171,63 +2171,7 @@ MonoBehaviour:
   _interactionPoint: {fileID: 1043843425}
   _onInteract:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1078063190}
-        m_MethodName: SetTarget
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1759043143}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1078063190}
-        m_MethodName: DisplayDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 1f053d1c0e57d52429928129d5d3c372,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1078063190}
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 186dcbf481661e24eb83fdaf0aaf94a5, type: 2}
-        m_MethodName: Complete
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 8f5208774131d2440a29fe720af6a87a, type: 2}
-        m_MethodName: Complete
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _onInteractionFail:
@@ -2235,7 +2179,112 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _conditionalEvents: []
+  _conditionalEvents:
+  - _conditionalCollection:
+      _taskConditions:
+      - _task: {fileID: 11400000, guid: 38df277ee8f82d64fbae7009fdb60ce2, type: 2}
+        _shouldBeActive: 1
+        _shouldBeCompleted: 0
+      _monoBehaviourConditions: []
+      _scriptableObjectConditions: []
+    _reactions:
+    - _onReact:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 38df277ee8f82d64fbae7009fdb60ce2, type: 2}
+            m_MethodName: Complete
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: SetTarget
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 1759043143}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: DisplayDialogue
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: d36324f7c3fb7c740be929112c54d21e,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+  - _conditionalCollection:
+      _taskConditions:
+      - _task: {fileID: 11400000, guid: 38df277ee8f82d64fbae7009fdb60ce2, type: 2}
+        _shouldBeActive: 1
+        _shouldBeCompleted: 1
+      _monoBehaviourConditions: []
+      _scriptableObjectConditions: []
+    _reactions:
+    - _onReact:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: SetTarget
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 1759043143}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: DisplayDialogue
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 23fefbfd4ef3f4c43b5af66faddde747,
+                type: 2}
+              m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1078063190}
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
 --- !u!1 &1827564701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,13 +2484,13 @@ PrefabInstance:
     - target: {fileID: 8023136185816539503, guid: f63efc68d11d563448901293862950dc,
         type: 3}
       propertyPath: _testTasks.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8023136185816539503, guid: f63efc68d11d563448901293862950dc,
         type: 3}
       propertyPath: _testTasks.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 186dcbf481661e24eb83fdaf0aaf94a5,
+      objectReference: {fileID: 11400000, guid: 38df277ee8f82d64fbae7009fdb60ce2,
         type: 2}
     - target: {fileID: 8023136185816539503, guid: f63efc68d11d563448901293862950dc,
         type: 3}
@@ -2568,6 +2617,81 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 377064320}
+    - target: {fileID: 5189148163548139604, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b7b3f85f18aa6604a8e1497ff2713781, type: 2}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189148163001862292, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787543, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787542, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 76398670177787541, guid: f63efc68d11d563448901293862950dc,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63efc68d11d563448901293862950dc, type: 3}
 --- !u!1 &5189148162963530402

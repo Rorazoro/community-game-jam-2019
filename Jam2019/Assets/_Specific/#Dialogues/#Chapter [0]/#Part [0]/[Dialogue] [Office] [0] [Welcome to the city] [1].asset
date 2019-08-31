@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5ede000de2948479395ba08a5894d1, type: 3}
+  m_Name: '[Dialogue] [Office] [0] [Welcome to the city] [1]'
+  m_EditorClassIdentifier: 
+  _dialogueData:
+  - _sentenceText: Is there anything else I can help you with?
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: c39fe9e1945f63c4b83d3b3c04f16949, type: 2}
+  - _sentenceText: Where is my chocolate bar?
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: e6ee73d56ce08eb428b4476f65bd9295, type: 2}
+  - _sentenceText: Emm, nevermind, sorry to have bothered you.
+    _audioCover: {fileID: 0}
+    _collocutor: {fileID: 11400000, guid: e6ee73d56ce08eb428b4476f65bd9295, type: 2}

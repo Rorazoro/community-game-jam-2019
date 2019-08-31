@@ -14,6 +14,13 @@ using TMPro;
 
 public class SceneOperator : MonoBehaviour
 {
+	private IEnumerator DelayAction(float seconds, System.Action action)
+	{
+		yield return new WaitForSeconds(seconds);
+
+		action.Invoke();
+	}
+
 	[SerializeField] private UnityEventFloat _onLoadingSceneAsync;
 	public UnityEventFloat _OnLoadingSceneAsync { get { return this._onLoadingSceneAsync; } }
 
@@ -22,7 +29,9 @@ public class SceneOperator : MonoBehaviour
 
 	#region Next
 	public void LoadNextScene(LoadSceneMode loadSceneMode) => SceneController.Instance.LoadNextScene(loadSceneMode);
-	public void LoadNextScene() => this.LoadNextScene(LoadSceneMode.Single);
+	public void LoadNextScene() => SceneController.Instance.LoadNextScene();
+
+	public void LoadNextScene(float secondsDelay) => this.StartCoroutine(this.DelayAction(secondsDelay, SceneController.Instance.LoadNextScene));
 
 	//! Async
 	public void LoadNextSceneAsync(LoadSceneMode loadSceneMode) => SceneController.Instance.LoadNextSceneAsync(loadSceneMode);
@@ -33,12 +42,16 @@ public class SceneOperator : MonoBehaviour
 	public void LoadPreviousScene(LoadSceneMode loadSceneMode) => SceneController.Instance.LoadPreviousScene(loadSceneMode);
 	public void LoadPreviousScene() => SceneController.Instance.LoadPreviousScene();
 
+	public void LoadPreviousScene(float secondsDelay) => this.StartCoroutine(this.DelayAction(secondsDelay, SceneController.Instance.LoadPreviousScene));
+
 	//! Async
 	public void LoadPreviousSceneAsync(LoadSceneMode loadSceneMode) => SceneController.Instance.LoadPreviousSceneAsync(loadSceneMode);
 	public void LoadPreviousSceneAsync() => SceneController.Instance.LoadPreviousSceneAsync();
 	#endregion
 
 	public void Exit() => SceneController.Instance.Exit();
+
+	public void Exit(float secondsDelay) => this.StartCoroutine(this.DelayAction(secondsDelay, SceneController.Instance.Exit));
 
 #if UNITY_EDITOR
 	//protected override void OnDrawGizmos()
