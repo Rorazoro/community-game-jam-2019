@@ -1,5 +1,3 @@
-﻿/* Created by Luna.Ticode */
-
 using System.Collections;
 using System.Collections.Generic;
 

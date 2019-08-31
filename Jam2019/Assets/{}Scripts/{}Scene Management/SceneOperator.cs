@@ -1,5 +1,3 @@
-﻿/* Created by Luna.Ticode */
-
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,7 +17,7 @@ public class SceneOperator : MonoBehaviour
 	[SerializeField] private UnityEventFloat _onLoadingSceneAsync;
 	public UnityEventFloat _OnLoadingSceneAsync { get { return this._onLoadingSceneAsync; } }
 
-	public void LoadSceneAsync(int sceneBuildIndex, LoadSceneMode loadSceneMode = LoadSceneMode.Single) => 
+	public void LoadSceneAsync(int sceneBuildIndex, LoadSceneMode loadSceneMode = LoadSceneMode.Single) =>
 		SceneController.Instance.LoadSceneAsync(sceneBuildIndex, loadSceneMode, this._onLoadingSceneAsync);
 
 	#region Next
